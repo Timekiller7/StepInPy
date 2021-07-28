@@ -1,14 +1,14 @@
 import subprocess
 import re
-
+import os
+name=""
 def edit(text):
     a=3
-    if text==3:
-        name = input("введите название репапапо")
     a_file = open('/Users/macos/Documents/scripts/robot', "r")
     list_of_lines = a_file.readlines()
     a_file.close()
     if text==3:
+        global name
         list_of_lines[1] = "cd /Users/macos/octopus/" + name + '\n'
     if text==1:
         a=int(input("Коммит по дефолту(0) или свой(1)?"))
@@ -40,6 +40,16 @@ def cycle(text):
                 break
         f.close()
     if (text == 3):
+        f=os.listdir("/Users/macos/octopus")
+        if ".DS_Store" in f:
+            f.remove(".DS_Store")
+        k=0
+        for i in f:
+            print(i," - ",k)
+            k+=1
+        num=int(input("Какую репу хотите сделать рабочей?"))
+        global name
+        name=f[num]
         edit(text)
 
     if (text == 4):
