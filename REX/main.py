@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-import subprocess
-import re
-#import cv2
-import os
 from ke import cycle
 
 print("Что хотите мой повелитель?")
@@ -19,7 +15,7 @@ def inaki():
         try:
             global text
             text = int(input())
-            
+           
             k = True
         except:
             print("пОЖАЛУЙСТА введите другое число повелитель *o*")
