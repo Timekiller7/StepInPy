@@ -15,7 +15,7 @@ def edit(text):
         a=int(input("Коммит по дефолту(0) или свой(1)?"))
     if a==1:
         s=input()
-        list_of_lines[3]="git commit -am "+s
+        list_of_lines[3]="git commit -am "+' "{}" '.format(s)+"\n"
     a_file = open('/Users/macos/Documents/scripts/robot', "w")
     a_file.writelines(list_of_lines)
     a_file.close()
@@ -29,12 +29,12 @@ def cycle(text):
         a_file = open('/Users/macos/Documents/scripts/robot', "r")
         list_of_lines = a_file.readlines()
         a_file.close()
-        list_of_lines[3] = "git commit -am " + default
+        list_of_lines[3] = "git commit -am " + ' "{}" '.format(default)+"\n"
         a_file = open('/Users/macos/Documents/scripts/robot', "w")
         a_file.writelines(list_of_lines)
         a_file.close()
     if (text == 2):
-        f = open('/Users/macos/Documents/scripts/robot', 'r+')
+        f = open('/Users/macos/Documents/scripts/robot', 'r')
         for line in f:
             if line.startswith('cd'):
                 print(re.sub(r'cd ', "", line))
