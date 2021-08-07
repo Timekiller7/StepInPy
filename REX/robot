@@ -1,5 +1,5 @@
 #!/bin/sh
 cd /Users/macos/octopus/web
 git add --all
-git commit -am "roboti zahvatyat mir nechelovecheskii commit"
+git commit -am "roboti zahvatyat mir {nechelovecheskii commit}"
 git push
